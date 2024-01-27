@@ -1,0 +1,50 @@
+Soal Jawaban No 1
+
+CREATE DATABASE Myshop;
+
+Soal Jawaban No 2
+
+Tabel pengguna
+CREATE TABLE Pengguna(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar (255) NOT null,
+    email varchar (255),
+    password varchar (255)
+);
+
+Tabel Kategori
+CREATE TABLE Kategori(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar (255) NOT null
+);
+
+Tabel Items
+CREATE TABLE Items(
+    id int PRIMARY KEY AUTO_INCREMENT,
+    name varchar (255) NOT null,
+    price int NOT null,
+    stock int,
+    kategori_id int NOT null,
+    FOREIGN KEY(kategori_id) REFERENCES kategori(id)
+);
+
+Soal Jawaban No.3
+
+insert pengguna 
+INSERT into pengguna(name,email,password) VALUES('John Doe','john@doe.com','john123'),('Jane Doe','jane@doe.com','jenita123');
+
+insert 
+INSERT into kategori(name) VALUES ('gadget'),('cloth'),('men'),('women'),('branded'); 
+
+insert items 
+INSERT into items(name,price,stock,kategori_id) VALUES ('Sumsang b50','4000000','100','1'),('uniklooh','500000','50','2'),('IMHO WATCH','2000000','10','1');
+
+Jawaban No.4
+Data Pengguna
+SELECT id,name,email FROM pengguna;
+
+Data Items
+SELECT * FROM `items` WHERE name LIKE '$uniklo';
+
+Jawaban No.5
+UPDATE items set price=2500000 WHERE id= 1;
